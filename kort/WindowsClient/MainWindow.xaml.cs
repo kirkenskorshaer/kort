@@ -1,28 +1,46 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using Scanner;
 
 namespace WindowsClient
 {
-	/// <summary>
-	/// Interaction logic for MainWindow.xaml
-	/// </summary>
 	public partial class MainWindow : Window
 	{
+		private ScannerConnectionFinder _scannerConnectionFinder;
+
+		private ObservableCollection<AbstractScannerConnection> _scannerConnections = new ObservableCollection<AbstractScannerConnection>();
+
 		public MainWindow()
 		{
 			InitializeComponent();
+
+			scannerListView.ItemsSource = _scannerConnections;
+
+			_scannerConnectionFinder = new ScannerConnectionFinder();
+			_scannerConnectionFinder.ScannerConnected += ScannerConnected;
+		}
+
+		private void ScannerConnected(object sender, EventArgs scannerEventArgs)
+		{
+			AbstractScannerConnection scannerConnection = (AbstractScannerConnection)scannerEventArgs;
+
+			scannerConnection.CodeScanned += CodeScanned;
+			scannerConnection.Disconnect += Disconnect;
+
+			_scannerConnections.Add(scannerConnection);
+		}
+
+		private void Disconnect(object sender, EventArgs e)
+		{
+			Dispatcher.Invoke(() => _scannerConnections.Remove((AbstractScannerConnection)sender));
+		}
+
+		private void CodeScanned(object sender, EventArgs e)
+		{
+			string code = ((StringEventArgs)e).Data;
+
+			Dispatcher.Invoke(() => idLabel.Content = code);
 		}
 	}
 }
