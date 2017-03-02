@@ -1,5 +1,7 @@
 package kirkenskorshr.medlemskortandroid;
 
+import android.media.Ringtone;
+import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
@@ -76,4 +78,19 @@ public class MainActivity extends AppCompatActivity
 	{
 		_connection.disconnect();
 	}
+
+	private void makeBeep()
+	{
+		try
+		{
+			Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+			Ringtone ringtone = RingtoneManager.getRingtone(getApplicationContext(), notification);
+			ringtone.play();
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+
 }
