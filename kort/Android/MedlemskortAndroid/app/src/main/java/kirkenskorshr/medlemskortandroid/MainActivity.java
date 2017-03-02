@@ -1,8 +1,12 @@
 package kirkenskorshr.medlemskortandroid;
 
+import android.app.PendingIntent;
+import android.content.Intent;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
+import android.nfc.NdefMessage;
+import android.nfc.NfcAdapter;
 import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,6 +20,9 @@ import kirkenskorshr.medlemskortandroid.Connection.Connection;
 public class MainActivity extends AppCompatActivity
 {
 	private Random _random;
+
+	private NfcAdapter mAdapter;
+	private PendingIntent mPendingIntent;
 	private Connection _connection;
 
 	protected void onCreate(Bundle savedInstanceState)
@@ -31,6 +38,29 @@ public class MainActivity extends AppCompatActivity
 		portText.setText("997");
 
 		_random = new Random();
+
+		mAdapter = NfcAdapter.getDefaultAdapter(this);
+		mPendingIntent = PendingIntent.getActivity(this, 0, new Intent(this, getClass()).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), 0);
+	}
+
+	@Override
+	protected void onResume()
+	{
+		super.onResume();
+		if (mAdapter != null)
+		{
+			mAdapter.enableForegroundDispatch(this, mPendingIntent, null, null);
+		}
+	}
+
+	@Override
+	protected void onPause()
+	{
+		super.onPause();
+		if (mAdapter != null)
+		{
+			mAdapter.disableForegroundDispatch(this);
+		}
 	}
 
 	public void connect(View view)
@@ -77,6 +107,42 @@ public class MainActivity extends AppCompatActivity
 	public void disconnect(View view)
 	{
 		_connection.disconnect();
+	}
+
+	@Override
+	protected void onNewIntent(Intent intent)
+	{
+		super.onNewIntent(intent);
+
+		if (intent == null)
+		{
+			return;
+		}
+
+		String action = intent.getAction();
+
+		if (NfcAdapter.ACTION_TAG_DISCOVERED.equals(action) || NfcAdapter.ACTION_TECH_DISCOVERED.equals(action) || NfcAdapter.ACTION_NDEF_DISCOVERED.equals(action))
+		{
+			Parcelable[] rawMsgs = intent.getParcelableArrayExtra(NfcAdapter.EXTRA_NDEF_MESSAGES);
+			NdefMessage[] msgs;
+			if (rawMsgs != null)
+			{
+				msgs = new NdefMessage[rawMsgs.length];
+				for (int i = 0; i < rawMsgs.length; i++)
+				{
+					msgs[i] = (NdefMessage) rawMsgs[i];
+					//msgs[i].
+				}
+			}
+			else
+			{
+				// Unknown tag type
+				byte[] id = intent.getByteArrayExtra(NfcAdapter.EXTRA_ID);
+				send("Code:" + bytesToString(id));
+
+				makeBeep();
+			}
+		}
 	}
 
 	private void makeBeep()
