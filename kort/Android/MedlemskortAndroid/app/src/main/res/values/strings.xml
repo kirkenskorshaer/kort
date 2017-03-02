@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Medlemskort Android</string>
+    <string name="edit_ip">ip</string>
+    <string name="edit_port">port</string>
+    <string name="button_connect">Connect</string>
+    <string name="button_disconnect">Disconnect</string>
+    <string name="button_send">Send</string>
 </resources>
