@@ -93,4 +93,24 @@ public class MainActivity extends AppCompatActivity
 		}
 	}
 
+	private String bytesToString(byte[] bytes)
+	{
+		long result = 0;
+		long currentFactor = 1;
+		for (byte currentByte : bytes)
+		{
+			char[] currentByteChars = String.format("%8s", Integer.toBinaryString(currentByte & 0xFF)).replace(' ', '0').toCharArray();
+
+			for (int index = 0; index < 8; index++)
+			{
+				char bitChar = currentByteChars[index];
+				int bit = Integer.parseInt(Character.toString(bitChar));
+
+				result += (currentFactor * bit);
+				currentFactor *= 2;
+			}
+		}
+
+		return Long.toString(result);
+	}
 }
