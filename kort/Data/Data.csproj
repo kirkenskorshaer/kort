@@ -57,6 +57,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Alert\AbstractAlert.cs" />
+    <Compile Include="Data\Alert\AlertCollection.cs" />
+    <Compile Include="Data\Alert\VisitTimeAlert.cs" />
+    <Compile Include="Data\Member.cs" />
+    <Compile Include="Data\Part\ServiceUse.cs" />
+    <Compile Include="Data\Service.cs" />
+    <Compile Include="Data\Visit.cs" />
     <Compile Include="MongoConnection.cs" />
     <Compile Include="AbstractData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -64,7 +71,12 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Utilities\Utilities.csproj">
+      <Project>{4b66b684-8222-487a-865f-f060c0ef263a}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
