@@ -40,8 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Handler\AlertHandler.cs" />
+    <Compile Include="Handler\MemberHandler.cs" />
+    <Compile Include="Handler\ServiceHandler.cs" />
+    <Compile Include="Handler\VisitHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Data\Data.csproj">
       <Project>{f47da6d0-81cf-4326-9b5f-781664483743}</Project>
