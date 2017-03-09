@@ -16,7 +16,7 @@ namespace Data.Data.Alert
 
 			List<Type> alertTypes = ReflectionHelper.GetChildTypes(typeof(AbstractAlert));
 
-			IEnumerable<AbstractAlert> alerts = ReadAllAlerts(mongoConnection, alertTypes);
+			IEnumerable<AbstractAlert> alerts = ReadAllAlerts(mongoConnection, alertTypes, null);
 
 			foreach (AbstractAlert alert in alerts)
 			{
@@ -31,15 +31,32 @@ namespace Data.Data.Alert
 			return members;
 		}
 
-		private static IEnumerable<AbstractAlert> ReadAllAlerts(MongoConnection mongoConnection, List<Type> alertTypes)
+		public static List<AbstractAlert> ReadAllAlerts(MongoConnection mongoConnection, Member member)
+		{
+			List<Type> alertTypes = ReflectionHelper.GetChildTypes(typeof(AbstractAlert));
+
+			return ReadAllAlerts(mongoConnection, alertTypes, member).ToList();
+		}
+
+		private static IEnumerable<AbstractAlert> ReadAllAlerts(MongoConnection mongoConnection, List<Type> alertTypes, Member member)
 		{
 			IEnumerable<AbstractAlert> alerts = new List<AbstractAlert>();
+
+			FilterDefinition<BsonDocument> filter;
+			if (member == null)
+			{
+				filter = Builders<BsonDocument>.Filter.Empty;
+			}
+			else
+			{
+				filter = Builders<BsonDocument>.Filter.Eq(bson => bson["MemberId"], member._id);
+			}
 
 			foreach (Type alertType in alertTypes)
 			{
 				IMongoCollection<BsonDocument> alertcollection = mongoConnection.Database.GetCollection<BsonDocument>(alertType.Name);
 
-				IFindFluent<BsonDocument, BsonDocument> findFluent = alertcollection.Find(alert => true);
+				IFindFluent<BsonDocument, BsonDocument> findFluent = alertcollection.Find(filter);
 
 				alerts = alerts.Concat(findFluent.ToEnumerable().Select(bson => (AbstractAlert)BsonSerializer.Deserialize(bson, alertType)));
 			}
