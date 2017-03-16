@@ -65,6 +65,11 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataContract\Alert\VisitTimeAlert.cs" />
+    <Compile Include="DataContract\InsertResult.cs" />
+    <Compile Include="DataContract\Part\ServiceUse.cs" />
+    <Compile Include="DataContract\Service.cs" />
+    <Compile Include="DataContract\Visit.cs" />
     <Compile Include="MembershipCard.svc.cs">
       <DependentUpon>MembershipCard.svc</DependentUpon>
     </Compile>
