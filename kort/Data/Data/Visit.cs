@@ -1,20 +1,14 @@
-﻿using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
+﻿using MongoDB.Bson.Serialization.Attributes;
 using System;
 
 namespace Data.Data
 {
-	public class Visit : AbstractData
+	public class Visit : AbstractMemberConnectedData
 	{
-		public Visit(Member member)
+		public Visit(string memberId)
 		{
-			MemberId = member._id;
+			MemberIdString = memberId;
 		}
-
-		public ObjectId MemberId { get; set; }
-
-		[BsonIgnore]
-		public string MemberIdString => MemberId.ToString();
 
 		[BsonDateTimeOptions(Kind = DateTimeKind.Local)]
 		public DateTime VisitTime { get; set; }

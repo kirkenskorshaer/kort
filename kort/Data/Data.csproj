@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\AbstractMemberConnectedData.cs" />
     <Compile Include="Data\Alert\AbstractAlert.cs" />
     <Compile Include="Data\Alert\AlertCollection.cs" />
     <Compile Include="Data\Alert\VisitTimeAlert.cs" />
