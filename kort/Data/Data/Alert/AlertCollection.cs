@@ -31,9 +31,11 @@ namespace Data.Data.Alert
 			return members;
 		}
 
-		public static List<AbstractAlert> ReadAllAlerts(MongoConnection mongoConnection, Member member)
+		public static List<AbstractAlert> ReadAllAlerts(MongoConnection mongoConnection, string memberId)
 		{
 			List<Type> alertTypes = ReflectionHelper.GetChildTypes(typeof(AbstractAlert));
+
+			Member member = AbstractData.Read<Member>(mongoConnection, memberId);
 
 			return ReadAllAlerts(mongoConnection, alertTypes, member).ToList();
 		}
