@@ -57,6 +57,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CardServer\Alert\VisitTimeAlert.cs" />
+    <Compile Include="CardServer\Member.cs" />
+    <Compile Include="CardServer\Service.cs" />
+    <Compile Include="CardServer\Visit.cs" />
     <Compile Include="Service References\CardServer\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -114,7 +118,7 @@
     <None Include="Service References\CardServer\MembershipCard4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CardServer\WindowsClient.CardServer.AbstractAlert.datasource">
+    <None Include="Service References\CardServer\WindowsClient.CardServer.InsertResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\CardServer\WindowsClient.CardServer.Member.datasource">
