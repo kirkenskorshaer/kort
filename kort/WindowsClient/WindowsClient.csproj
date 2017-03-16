@@ -37,6 +37,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,6 +57,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Service References\CardServer\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -91,6 +98,34 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="Service References\CardServer\MembershipCard.wsdl" />
+    <None Include="Service References\CardServer\MembershipCard.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CardServer\MembershipCard1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CardServer\MembershipCard2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CardServer\MembershipCard3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CardServer\MembershipCard4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CardServer\WindowsClient.CardServer.AbstractAlert.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CardServer\WindowsClient.CardServer.Member.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CardServer\WindowsClient.CardServer.Service.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CardServer\WindowsClient.CardServer.Visit.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -100,6 +135,27 @@
       <Project>{8086f25d-5135-420b-ab3f-287214437447}</Project>
       <Name>Scanner</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\CardServer\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CardServer\MembershipCard.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CardServer\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CardServer\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CardServer\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

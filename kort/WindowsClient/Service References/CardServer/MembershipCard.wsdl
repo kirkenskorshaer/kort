@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="MembershipCard" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:52355/MembershipCard.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:52355/MembershipCard.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:52355/MembershipCard.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WindowsServer.DataContract" />
+      <xsd:import schemaLocation="http://localhost:52355/MembershipCard.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/WindowsServer.DataContract.Alert" />
+      <xsd:import schemaLocation="http://localhost:52355/MembershipCard.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/WindowsServer.DataContract.Part" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IMembershipCard_GetMembersByCardId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMembersByCardId" />
+  </wsdl:message>
+  <wsdl:message name="IMembershipCard_GetMembersByCardId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMembersByCardIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMembershipCard_GetMembersByNickName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMembersByNickName" />
+  </wsdl:message>
+  <wsdl:message name="IMembershipCard_GetMembersByNickName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMembersByNickNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMembershipCard_GetMembersToAlert_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMembersToAlert" />
+  </wsdl:message>
+  <wsdl:message name="IMembershipCard_GetMembersToAlert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMembersToAlertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMembershipCard_InsertMember_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertMember" />
+  </wsdl:message>
+  <wsdl:message name="IMembershipCard_InsertMember_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertMemberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMembershipCard_UpdateMember_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMember" />
+  </wsdl:message>
+  <wsdl:message name="IMembershipCard_UpdateMember_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMemberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMembershipCard_DeleteMember_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMember" />
+  </wsdl:message>
+  <wsdl:message name="IMembershipCard_DeleteMember_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMemberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMembershipCard_GetAlertsOnMember_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAlertsOnMember" />
+  </wsdl:message>
+  <wsdl:message name="IMembershipCard_GetAlertsOnMember_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAlertsOnMemberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMembershipCard_InsertAlert_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertAlert" />
+  </wsdl:message>
+  <wsdl:message name="IMembershipCard_InsertAlert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertAlertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMembershipCard_DeleteAlert_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAlert" />
+  </wsdl:message>
+  <wsdl:message name="IMembershipCard_DeleteAlert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAlertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMembershipCard_GetServicesOnMember_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServicesOnMember" />
+  </wsdl:message>
+  <wsdl:message name="IMembershipCard_GetServicesOnMember_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServicesOnMemberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMembershipCard_InsertService_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertService" />
+  </wsdl:message>
+  <wsdl:message name="IMembershipCard_InsertService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMembershipCard_UpdateService_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateService" />
+  </wsdl:message>
+  <wsdl:message name="IMembershipCard_UpdateService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMembershipCard_DeleteService_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteService" />
+  </wsdl:message>
+  <wsdl:message name="IMembershipCard_DeleteService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMembershipCard_GetVisitsOnMember_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVisitsOnMember" />
+  </wsdl:message>
+  <wsdl:message name="IMembershipCard_GetVisitsOnMember_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVisitsOnMemberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMembershipCard_InsertVisit_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertVisit" />
+  </wsdl:message>
+  <wsdl:message name="IMembershipCard_InsertVisit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertVisitResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IMembershipCard">
+    <wsdl:operation name="GetMembersByCardId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMembershipCard/GetMembersByCardId" message="tns:IMembershipCard_GetMembersByCardId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMembershipCard/GetMembersByCardIdResponse" message="tns:IMembershipCard_GetMembersByCardId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMembersByNickName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMembershipCard/GetMembersByNickName" message="tns:IMembershipCard_GetMembersByNickName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMembershipCard/GetMembersByNickNameResponse" message="tns:IMembershipCard_GetMembersByNickName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMembersToAlert">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMembershipCard/GetMembersToAlert" message="tns:IMembershipCard_GetMembersToAlert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMembershipCard/GetMembersToAlertResponse" message="tns:IMembershipCard_GetMembersToAlert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertMember">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMembershipCard/InsertMember" message="tns:IMembershipCard_InsertMember_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMembershipCard/InsertMemberResponse" message="tns:IMembershipCard_InsertMember_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMember">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMembershipCard/UpdateMember" message="tns:IMembershipCard_UpdateMember_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMembershipCard/UpdateMemberResponse" message="tns:IMembershipCard_UpdateMember_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMember">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMembershipCard/DeleteMember" message="tns:IMembershipCard_DeleteMember_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMembershipCard/DeleteMemberResponse" message="tns:IMembershipCard_DeleteMember_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAlertsOnMember">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMembershipCard/GetAlertsOnMember" message="tns:IMembershipCard_GetAlertsOnMember_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMembershipCard/GetAlertsOnMemberResponse" message="tns:IMembershipCard_GetAlertsOnMember_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertAlert">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMembershipCard/InsertAlert" message="tns:IMembershipCard_InsertAlert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMembershipCard/InsertAlertResponse" message="tns:IMembershipCard_InsertAlert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAlert">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMembershipCard/DeleteAlert" message="tns:IMembershipCard_DeleteAlert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMembershipCard/DeleteAlertResponse" message="tns:IMembershipCard_DeleteAlert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServicesOnMember">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMembershipCard/GetServicesOnMember" message="tns:IMembershipCard_GetServicesOnMember_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMembershipCard/GetServicesOnMemberResponse" message="tns:IMembershipCard_GetServicesOnMember_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertService">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMembershipCard/InsertService" message="tns:IMembershipCard_InsertService_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMembershipCard/InsertServiceResponse" message="tns:IMembershipCard_InsertService_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateService">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMembershipCard/UpdateService" message="tns:IMembershipCard_UpdateService_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMembershipCard/UpdateServiceResponse" message="tns:IMembershipCard_UpdateService_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteService">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMembershipCard/DeleteService" message="tns:IMembershipCard_DeleteService_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMembershipCard/DeleteServiceResponse" message="tns:IMembershipCard_DeleteService_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVisitsOnMember">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMembershipCard/GetVisitsOnMember" message="tns:IMembershipCard_GetVisitsOnMember_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMembershipCard/GetVisitsOnMemberResponse" message="tns:IMembershipCard_GetVisitsOnMember_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertVisit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMembershipCard/InsertVisit" message="tns:IMembershipCard_InsertVisit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMembershipCard/InsertVisitResponse" message="tns:IMembershipCard_InsertVisit_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:service name="MembershipCard" />
+</wsdl:definitions>

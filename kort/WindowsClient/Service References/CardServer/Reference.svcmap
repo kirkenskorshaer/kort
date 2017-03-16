@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="50c933c9-4537-4f06-9f95-c57470e3f622" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:52355/MembershipCard.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="MembershipCard.wsdl" MetadataType="Wsdl" ID="1205c404-93d2-4354-be88-879018ea6262" SourceId="1" SourceUrl="http://localhost:52355/MembershipCard.svc?wsdl" />
+    <MetadataFile FileName="MembershipCard.disco" MetadataType="Disco" ID="f834830d-53d6-467c-8c5b-f187911e2d89" SourceId="1" SourceUrl="http://localhost:52355/MembershipCard.svc?disco" />
+    <MetadataFile FileName="MembershipCard.xsd" MetadataType="Schema" ID="76df6104-eb19-4b2e-987d-0dd2739b3f17" SourceId="1" SourceUrl="http://localhost:52355/MembershipCard.svc?xsd=xsd3" />
+    <MetadataFile FileName="MembershipCard1.xsd" MetadataType="Schema" ID="1cc0d4c3-efa5-4ea6-ab7d-ca457b1d09d5" SourceId="1" SourceUrl="http://localhost:52355/MembershipCard.svc?xsd=xsd2" />
+    <MetadataFile FileName="MembershipCard2.xsd" MetadataType="Schema" ID="9340b8a1-c716-4403-ba66-29eea65df2b6" SourceId="1" SourceUrl="http://localhost:52355/MembershipCard.svc?xsd=xsd1" />
+    <MetadataFile FileName="MembershipCard3.xsd" MetadataType="Schema" ID="5710e7b4-e279-487a-959c-8504058f1c8f" SourceId="1" SourceUrl="http://localhost:52355/MembershipCard.svc?xsd=xsd0" />
+    <MetadataFile FileName="MembershipCard4.xsd" MetadataType="Schema" ID="ad5f5bc7-5f6c-4675-9799-a99b16a52c36" SourceId="1" SourceUrl="http://localhost:52355/MembershipCard.svc?xsd=xsd4" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
