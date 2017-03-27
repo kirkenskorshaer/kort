@@ -61,6 +61,7 @@
     <Compile Include="Data\Alert\AbstractAlert.cs" />
     <Compile Include="Data\Alert\AlertCollection.cs" />
     <Compile Include="Data\Alert\VisitTimeAlert.cs" />
+    <Compile Include="Data\Log.cs" />
     <Compile Include="Data\Member.cs" />
     <Compile Include="Data\Part\Privilege.cs" />
     <Compile Include="Data\Part\ServiceUse.cs" />
