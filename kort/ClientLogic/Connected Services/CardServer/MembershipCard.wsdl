@@ -99,6 +99,12 @@
   <wsdl:message name="IMembershipCard_InsertVisit_OutputMessage">
     <wsdl:part name="parameters" element="tns:InsertVisitResponse" />
   </wsdl:message>
+  <wsdl:message name="IMembershipCard_UpdateTicket_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTicket" />
+  </wsdl:message>
+  <wsdl:message name="IMembershipCard_UpdateTicket_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTicketResponse" />
+  </wsdl:message>
   <wsdl:portType name="IMembershipCard">
     <wsdl:operation name="GetMembersByCardId">
       <wsdl:input wsaw:Action="http://tempuri.org/IMembershipCard/GetMembersByCardId" message="tns:IMembershipCard_GetMembersByCardId_InputMessage" />
@@ -159,6 +165,10 @@
     <wsdl:operation name="InsertVisit">
       <wsdl:input wsaw:Action="http://tempuri.org/IMembershipCard/InsertVisit" message="tns:IMembershipCard_InsertVisit_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMembershipCard/InsertVisitResponse" message="tns:IMembershipCard_InsertVisit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTicket">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMembershipCard/UpdateTicket" message="tns:IMembershipCard_UpdateTicket_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMembershipCard/UpdateTicketResponse" message="tns:IMembershipCard_UpdateTicket_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:service name="MembershipCard" />

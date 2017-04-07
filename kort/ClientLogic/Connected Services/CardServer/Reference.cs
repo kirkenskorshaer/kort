@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WindowsClient.CardServer {
+namespace ClientLogic.CardServer {
     using System.Runtime.Serialization;
     using System;
     
@@ -148,7 +148,7 @@ namespace WindowsClient.CardServer {
         private string IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WindowsClient.CardServer.Member MemberField;
+        private ClientLogic.CardServer.Member MemberField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.TimeSpan TimeFromLatestVisitBeforeAlertField;
@@ -177,7 +177,7 @@ namespace WindowsClient.CardServer {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public WindowsClient.CardServer.Member Member {
+        public ClientLogic.CardServer.Member Member {
             get {
                 return this.MemberField;
             }
@@ -234,7 +234,7 @@ namespace WindowsClient.CardServer {
         private string NameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<WindowsClient.CardServer.ServiceUse> ServiceUsesField;
+        private System.Collections.Generic.List<ClientLogic.CardServer.ServiceUse> ServiceUsesField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -299,7 +299,7 @@ namespace WindowsClient.CardServer {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<WindowsClient.CardServer.ServiceUse> ServiceUses {
+        public System.Collections.Generic.List<ClientLogic.CardServer.ServiceUse> ServiceUses {
             get {
                 return this.ServiceUsesField;
             }
@@ -443,108 +443,191 @@ namespace WindowsClient.CardServer {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Ticket", Namespace="http://schemas.datacontract.org/2004/07/WindowsServer.DataContract")]
+    [System.SerializableAttribute()]
+    public partial class Ticket : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UserNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime ValidFromField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime ValidToField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string UserName {
+            get {
+                return this.UserNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserNameField, value) != true)) {
+                    this.UserNameField = value;
+                    this.RaisePropertyChanged("UserName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime ValidFrom {
+            get {
+                return this.ValidFromField;
+            }
+            set {
+                if ((this.ValidFromField.Equals(value) != true)) {
+                    this.ValidFromField = value;
+                    this.RaisePropertyChanged("ValidFrom");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime ValidTo {
+            get {
+                return this.ValidToField;
+            }
+            set {
+                if ((this.ValidToField.Equals(value) != true)) {
+                    this.ValidToField = value;
+                    this.RaisePropertyChanged("ValidTo");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="CardServer.IMembershipCard")]
     public interface IMembershipCard {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMembershipCard/GetMembersByCardId", ReplyAction="http://tempuri.org/IMembershipCard/GetMembersByCardIdResponse")]
-        System.Collections.Generic.List<WindowsClient.CardServer.Member> GetMembersByCardId(string cardId);
+        System.Collections.Generic.List<ClientLogic.CardServer.Member> GetMembersByCardId(string cardId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMembershipCard/GetMembersByCardId", ReplyAction="http://tempuri.org/IMembershipCard/GetMembersByCardIdResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<WindowsClient.CardServer.Member>> GetMembersByCardIdAsync(string cardId);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<ClientLogic.CardServer.Member>> GetMembersByCardIdAsync(string cardId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMembershipCard/GetMembersByNickName", ReplyAction="http://tempuri.org/IMembershipCard/GetMembersByNickNameResponse")]
-        System.Collections.Generic.List<WindowsClient.CardServer.Member> GetMembersByNickName(string nickName);
+        System.Collections.Generic.List<ClientLogic.CardServer.Member> GetMembersByNickName(string nickName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMembershipCard/GetMembersByNickName", ReplyAction="http://tempuri.org/IMembershipCard/GetMembersByNickNameResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<WindowsClient.CardServer.Member>> GetMembersByNickNameAsync(string nickName);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<ClientLogic.CardServer.Member>> GetMembersByNickNameAsync(string nickName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMembershipCard/GetMembersToAlert", ReplyAction="http://tempuri.org/IMembershipCard/GetMembersToAlertResponse")]
-        System.Collections.Generic.List<WindowsClient.CardServer.Member> GetMembersToAlert();
+        System.Collections.Generic.List<ClientLogic.CardServer.Member> GetMembersToAlert();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMembershipCard/GetMembersToAlert", ReplyAction="http://tempuri.org/IMembershipCard/GetMembersToAlertResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<WindowsClient.CardServer.Member>> GetMembersToAlertAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<ClientLogic.CardServer.Member>> GetMembersToAlertAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMembershipCard/InsertMember", ReplyAction="http://tempuri.org/IMembershipCard/InsertMemberResponse")]
-        WindowsClient.CardServer.InsertResult InsertMember(WindowsClient.CardServer.Member member);
+        ClientLogic.CardServer.InsertResult InsertMember(ClientLogic.CardServer.Member member);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMembershipCard/InsertMember", ReplyAction="http://tempuri.org/IMembershipCard/InsertMemberResponse")]
-        System.Threading.Tasks.Task<WindowsClient.CardServer.InsertResult> InsertMemberAsync(WindowsClient.CardServer.Member member);
+        System.Threading.Tasks.Task<ClientLogic.CardServer.InsertResult> InsertMemberAsync(ClientLogic.CardServer.Member member);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMembershipCard/UpdateMember", ReplyAction="http://tempuri.org/IMembershipCard/UpdateMemberResponse")]
-        void UpdateMember(WindowsClient.CardServer.Member member);
+        void UpdateMember(ClientLogic.CardServer.Member member);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMembershipCard/UpdateMember", ReplyAction="http://tempuri.org/IMembershipCard/UpdateMemberResponse")]
-        System.Threading.Tasks.Task UpdateMemberAsync(WindowsClient.CardServer.Member member);
+        System.Threading.Tasks.Task UpdateMemberAsync(ClientLogic.CardServer.Member member);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMembershipCard/DeleteMember", ReplyAction="http://tempuri.org/IMembershipCard/DeleteMemberResponse")]
-        void DeleteMember(WindowsClient.CardServer.Member member);
+        void DeleteMember(ClientLogic.CardServer.Member member);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMembershipCard/DeleteMember", ReplyAction="http://tempuri.org/IMembershipCard/DeleteMemberResponse")]
-        System.Threading.Tasks.Task DeleteMemberAsync(WindowsClient.CardServer.Member member);
+        System.Threading.Tasks.Task DeleteMemberAsync(ClientLogic.CardServer.Member member);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMembershipCard/GetAlertsOnMember", ReplyAction="http://tempuri.org/IMembershipCard/GetAlertsOnMemberResponse")]
-        System.Collections.Generic.List<WindowsClient.CardServer.VisitTimeAlert> GetAlertsOnMember(string memberid);
+        System.Collections.Generic.List<ClientLogic.CardServer.VisitTimeAlert> GetAlertsOnMember(string memberid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMembershipCard/GetAlertsOnMember", ReplyAction="http://tempuri.org/IMembershipCard/GetAlertsOnMemberResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<WindowsClient.CardServer.VisitTimeAlert>> GetAlertsOnMemberAsync(string memberid);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<ClientLogic.CardServer.VisitTimeAlert>> GetAlertsOnMemberAsync(string memberid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMembershipCard/InsertAlert", ReplyAction="http://tempuri.org/IMembershipCard/InsertAlertResponse")]
-        WindowsClient.CardServer.InsertResult InsertAlert(WindowsClient.CardServer.VisitTimeAlert alert);
+        ClientLogic.CardServer.InsertResult InsertAlert(ClientLogic.CardServer.VisitTimeAlert alert);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMembershipCard/InsertAlert", ReplyAction="http://tempuri.org/IMembershipCard/InsertAlertResponse")]
-        System.Threading.Tasks.Task<WindowsClient.CardServer.InsertResult> InsertAlertAsync(WindowsClient.CardServer.VisitTimeAlert alert);
+        System.Threading.Tasks.Task<ClientLogic.CardServer.InsertResult> InsertAlertAsync(ClientLogic.CardServer.VisitTimeAlert alert);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMembershipCard/DeleteAlert", ReplyAction="http://tempuri.org/IMembershipCard/DeleteAlertResponse")]
-        void DeleteAlert(WindowsClient.CardServer.VisitTimeAlert alert);
+        void DeleteAlert(ClientLogic.CardServer.VisitTimeAlert alert);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMembershipCard/DeleteAlert", ReplyAction="http://tempuri.org/IMembershipCard/DeleteAlertResponse")]
-        System.Threading.Tasks.Task DeleteAlertAsync(WindowsClient.CardServer.VisitTimeAlert alert);
+        System.Threading.Tasks.Task DeleteAlertAsync(ClientLogic.CardServer.VisitTimeAlert alert);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMembershipCard/GetServicesOnMember", ReplyAction="http://tempuri.org/IMembershipCard/GetServicesOnMemberResponse")]
-        System.Collections.Generic.List<WindowsClient.CardServer.Service> GetServicesOnMember(string memberid);
+        System.Collections.Generic.List<ClientLogic.CardServer.Service> GetServicesOnMember(string memberid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMembershipCard/GetServicesOnMember", ReplyAction="http://tempuri.org/IMembershipCard/GetServicesOnMemberResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<WindowsClient.CardServer.Service>> GetServicesOnMemberAsync(string memberid);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<ClientLogic.CardServer.Service>> GetServicesOnMemberAsync(string memberid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMembershipCard/InsertService", ReplyAction="http://tempuri.org/IMembershipCard/InsertServiceResponse")]
-        WindowsClient.CardServer.InsertResult InsertService(WindowsClient.CardServer.Service service);
+        ClientLogic.CardServer.InsertResult InsertService(ClientLogic.CardServer.Service service);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMembershipCard/InsertService", ReplyAction="http://tempuri.org/IMembershipCard/InsertServiceResponse")]
-        System.Threading.Tasks.Task<WindowsClient.CardServer.InsertResult> InsertServiceAsync(WindowsClient.CardServer.Service service);
+        System.Threading.Tasks.Task<ClientLogic.CardServer.InsertResult> InsertServiceAsync(ClientLogic.CardServer.Service service);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMembershipCard/UpdateService", ReplyAction="http://tempuri.org/IMembershipCard/UpdateServiceResponse")]
-        void UpdateService(WindowsClient.CardServer.Service service);
+        void UpdateService(ClientLogic.CardServer.Service service);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMembershipCard/UpdateService", ReplyAction="http://tempuri.org/IMembershipCard/UpdateServiceResponse")]
-        System.Threading.Tasks.Task UpdateServiceAsync(WindowsClient.CardServer.Service service);
+        System.Threading.Tasks.Task UpdateServiceAsync(ClientLogic.CardServer.Service service);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMembershipCard/DeleteService", ReplyAction="http://tempuri.org/IMembershipCard/DeleteServiceResponse")]
-        void DeleteService(WindowsClient.CardServer.Service service);
+        void DeleteService(ClientLogic.CardServer.Service service);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMembershipCard/DeleteService", ReplyAction="http://tempuri.org/IMembershipCard/DeleteServiceResponse")]
-        System.Threading.Tasks.Task DeleteServiceAsync(WindowsClient.CardServer.Service service);
+        System.Threading.Tasks.Task DeleteServiceAsync(ClientLogic.CardServer.Service service);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMembershipCard/GetVisitsOnMember", ReplyAction="http://tempuri.org/IMembershipCard/GetVisitsOnMemberResponse")]
-        System.Collections.Generic.List<WindowsClient.CardServer.Visit> GetVisitsOnMember(string memberid);
+        System.Collections.Generic.List<ClientLogic.CardServer.Visit> GetVisitsOnMember(string memberid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMembershipCard/GetVisitsOnMember", ReplyAction="http://tempuri.org/IMembershipCard/GetVisitsOnMemberResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<WindowsClient.CardServer.Visit>> GetVisitsOnMemberAsync(string memberid);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<ClientLogic.CardServer.Visit>> GetVisitsOnMemberAsync(string memberid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMembershipCard/InsertVisit", ReplyAction="http://tempuri.org/IMembershipCard/InsertVisitResponse")]
-        WindowsClient.CardServer.InsertResult InsertVisit(WindowsClient.CardServer.Visit visit);
+        ClientLogic.CardServer.InsertResult InsertVisit(ClientLogic.CardServer.Visit visit);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMembershipCard/InsertVisit", ReplyAction="http://tempuri.org/IMembershipCard/InsertVisitResponse")]
-        System.Threading.Tasks.Task<WindowsClient.CardServer.InsertResult> InsertVisitAsync(WindowsClient.CardServer.Visit visit);
+        System.Threading.Tasks.Task<ClientLogic.CardServer.InsertResult> InsertVisitAsync(ClientLogic.CardServer.Visit visit);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMembershipCard/UpdateTicket", ReplyAction="http://tempuri.org/IMembershipCard/UpdateTicketResponse")]
+        void UpdateTicket(ClientLogic.CardServer.Ticket ticket);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMembershipCard/UpdateTicket", ReplyAction="http://tempuri.org/IMembershipCard/UpdateTicketResponse")]
+        System.Threading.Tasks.Task UpdateTicketAsync(ClientLogic.CardServer.Ticket ticket);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IMembershipCardChannel : WindowsClient.CardServer.IMembershipCard, System.ServiceModel.IClientChannel {
+    public interface IMembershipCardChannel : ClientLogic.CardServer.IMembershipCard, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class MembershipCardClient : System.ServiceModel.ClientBase<WindowsClient.CardServer.IMembershipCard>, WindowsClient.CardServer.IMembershipCard {
+    public partial class MembershipCardClient : System.ServiceModel.ClientBase<ClientLogic.CardServer.IMembershipCard>, ClientLogic.CardServer.IMembershipCard {
         
         public MembershipCardClient() {
         }
@@ -565,124 +648,132 @@ namespace WindowsClient.CardServer {
                 base(binding, remoteAddress) {
         }
         
-        public System.Collections.Generic.List<WindowsClient.CardServer.Member> GetMembersByCardId(string cardId) {
+        public System.Collections.Generic.List<ClientLogic.CardServer.Member> GetMembersByCardId(string cardId) {
             return base.Channel.GetMembersByCardId(cardId);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<WindowsClient.CardServer.Member>> GetMembersByCardIdAsync(string cardId) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<ClientLogic.CardServer.Member>> GetMembersByCardIdAsync(string cardId) {
             return base.Channel.GetMembersByCardIdAsync(cardId);
         }
         
-        public System.Collections.Generic.List<WindowsClient.CardServer.Member> GetMembersByNickName(string nickName) {
+        public System.Collections.Generic.List<ClientLogic.CardServer.Member> GetMembersByNickName(string nickName) {
             return base.Channel.GetMembersByNickName(nickName);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<WindowsClient.CardServer.Member>> GetMembersByNickNameAsync(string nickName) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<ClientLogic.CardServer.Member>> GetMembersByNickNameAsync(string nickName) {
             return base.Channel.GetMembersByNickNameAsync(nickName);
         }
         
-        public System.Collections.Generic.List<WindowsClient.CardServer.Member> GetMembersToAlert() {
+        public System.Collections.Generic.List<ClientLogic.CardServer.Member> GetMembersToAlert() {
             return base.Channel.GetMembersToAlert();
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<WindowsClient.CardServer.Member>> GetMembersToAlertAsync() {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<ClientLogic.CardServer.Member>> GetMembersToAlertAsync() {
             return base.Channel.GetMembersToAlertAsync();
         }
         
-        public WindowsClient.CardServer.InsertResult InsertMember(WindowsClient.CardServer.Member member) {
+        public ClientLogic.CardServer.InsertResult InsertMember(ClientLogic.CardServer.Member member) {
             return base.Channel.InsertMember(member);
         }
         
-        public System.Threading.Tasks.Task<WindowsClient.CardServer.InsertResult> InsertMemberAsync(WindowsClient.CardServer.Member member) {
+        public System.Threading.Tasks.Task<ClientLogic.CardServer.InsertResult> InsertMemberAsync(ClientLogic.CardServer.Member member) {
             return base.Channel.InsertMemberAsync(member);
         }
         
-        public void UpdateMember(WindowsClient.CardServer.Member member) {
+        public void UpdateMember(ClientLogic.CardServer.Member member) {
             base.Channel.UpdateMember(member);
         }
         
-        public System.Threading.Tasks.Task UpdateMemberAsync(WindowsClient.CardServer.Member member) {
+        public System.Threading.Tasks.Task UpdateMemberAsync(ClientLogic.CardServer.Member member) {
             return base.Channel.UpdateMemberAsync(member);
         }
         
-        public void DeleteMember(WindowsClient.CardServer.Member member) {
+        public void DeleteMember(ClientLogic.CardServer.Member member) {
             base.Channel.DeleteMember(member);
         }
         
-        public System.Threading.Tasks.Task DeleteMemberAsync(WindowsClient.CardServer.Member member) {
+        public System.Threading.Tasks.Task DeleteMemberAsync(ClientLogic.CardServer.Member member) {
             return base.Channel.DeleteMemberAsync(member);
         }
         
-        public System.Collections.Generic.List<WindowsClient.CardServer.VisitTimeAlert> GetAlertsOnMember(string memberid) {
+        public System.Collections.Generic.List<ClientLogic.CardServer.VisitTimeAlert> GetAlertsOnMember(string memberid) {
             return base.Channel.GetAlertsOnMember(memberid);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<WindowsClient.CardServer.VisitTimeAlert>> GetAlertsOnMemberAsync(string memberid) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<ClientLogic.CardServer.VisitTimeAlert>> GetAlertsOnMemberAsync(string memberid) {
             return base.Channel.GetAlertsOnMemberAsync(memberid);
         }
         
-        public WindowsClient.CardServer.InsertResult InsertAlert(WindowsClient.CardServer.VisitTimeAlert alert) {
+        public ClientLogic.CardServer.InsertResult InsertAlert(ClientLogic.CardServer.VisitTimeAlert alert) {
             return base.Channel.InsertAlert(alert);
         }
         
-        public System.Threading.Tasks.Task<WindowsClient.CardServer.InsertResult> InsertAlertAsync(WindowsClient.CardServer.VisitTimeAlert alert) {
+        public System.Threading.Tasks.Task<ClientLogic.CardServer.InsertResult> InsertAlertAsync(ClientLogic.CardServer.VisitTimeAlert alert) {
             return base.Channel.InsertAlertAsync(alert);
         }
         
-        public void DeleteAlert(WindowsClient.CardServer.VisitTimeAlert alert) {
+        public void DeleteAlert(ClientLogic.CardServer.VisitTimeAlert alert) {
             base.Channel.DeleteAlert(alert);
         }
         
-        public System.Threading.Tasks.Task DeleteAlertAsync(WindowsClient.CardServer.VisitTimeAlert alert) {
+        public System.Threading.Tasks.Task DeleteAlertAsync(ClientLogic.CardServer.VisitTimeAlert alert) {
             return base.Channel.DeleteAlertAsync(alert);
         }
         
-        public System.Collections.Generic.List<WindowsClient.CardServer.Service> GetServicesOnMember(string memberid) {
+        public System.Collections.Generic.List<ClientLogic.CardServer.Service> GetServicesOnMember(string memberid) {
             return base.Channel.GetServicesOnMember(memberid);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<WindowsClient.CardServer.Service>> GetServicesOnMemberAsync(string memberid) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<ClientLogic.CardServer.Service>> GetServicesOnMemberAsync(string memberid) {
             return base.Channel.GetServicesOnMemberAsync(memberid);
         }
         
-        public WindowsClient.CardServer.InsertResult InsertService(WindowsClient.CardServer.Service service) {
+        public ClientLogic.CardServer.InsertResult InsertService(ClientLogic.CardServer.Service service) {
             return base.Channel.InsertService(service);
         }
         
-        public System.Threading.Tasks.Task<WindowsClient.CardServer.InsertResult> InsertServiceAsync(WindowsClient.CardServer.Service service) {
+        public System.Threading.Tasks.Task<ClientLogic.CardServer.InsertResult> InsertServiceAsync(ClientLogic.CardServer.Service service) {
             return base.Channel.InsertServiceAsync(service);
         }
         
-        public void UpdateService(WindowsClient.CardServer.Service service) {
+        public void UpdateService(ClientLogic.CardServer.Service service) {
             base.Channel.UpdateService(service);
         }
         
-        public System.Threading.Tasks.Task UpdateServiceAsync(WindowsClient.CardServer.Service service) {
+        public System.Threading.Tasks.Task UpdateServiceAsync(ClientLogic.CardServer.Service service) {
             return base.Channel.UpdateServiceAsync(service);
         }
         
-        public void DeleteService(WindowsClient.CardServer.Service service) {
+        public void DeleteService(ClientLogic.CardServer.Service service) {
             base.Channel.DeleteService(service);
         }
         
-        public System.Threading.Tasks.Task DeleteServiceAsync(WindowsClient.CardServer.Service service) {
+        public System.Threading.Tasks.Task DeleteServiceAsync(ClientLogic.CardServer.Service service) {
             return base.Channel.DeleteServiceAsync(service);
         }
         
-        public System.Collections.Generic.List<WindowsClient.CardServer.Visit> GetVisitsOnMember(string memberid) {
+        public System.Collections.Generic.List<ClientLogic.CardServer.Visit> GetVisitsOnMember(string memberid) {
             return base.Channel.GetVisitsOnMember(memberid);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<WindowsClient.CardServer.Visit>> GetVisitsOnMemberAsync(string memberid) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<ClientLogic.CardServer.Visit>> GetVisitsOnMemberAsync(string memberid) {
             return base.Channel.GetVisitsOnMemberAsync(memberid);
         }
         
-        public WindowsClient.CardServer.InsertResult InsertVisit(WindowsClient.CardServer.Visit visit) {
+        public ClientLogic.CardServer.InsertResult InsertVisit(ClientLogic.CardServer.Visit visit) {
             return base.Channel.InsertVisit(visit);
         }
         
-        public System.Threading.Tasks.Task<WindowsClient.CardServer.InsertResult> InsertVisitAsync(WindowsClient.CardServer.Visit visit) {
+        public System.Threading.Tasks.Task<ClientLogic.CardServer.InsertResult> InsertVisitAsync(ClientLogic.CardServer.Visit visit) {
             return base.Channel.InsertVisitAsync(visit);
+        }
+        
+        public void UpdateTicket(ClientLogic.CardServer.Ticket ticket) {
+            base.Channel.UpdateTicket(ticket);
+        }
+        
+        public System.Threading.Tasks.Task UpdateTicketAsync(ClientLogic.CardServer.Ticket ticket) {
+            return base.Channel.UpdateTicketAsync(ticket);
         }
     }
 }

@@ -2,7 +2,6 @@
 using System.Collections.ObjectModel;
 using System.Windows;
 using Scanner;
-using WindowsClient.CardServer;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Input;
@@ -11,6 +10,8 @@ using System.Net.Sockets;
 using System.Windows.Controls;
 using System.ComponentModel;
 using System.Windows.Data;
+using ClientLogic;
+using ClientLogic.CardServer;
 
 namespace WindowsClient
 {

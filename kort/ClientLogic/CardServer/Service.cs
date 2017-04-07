@@ -1,4 +1,4 @@
-﻿namespace WindowsClient.CardServer
+﻿namespace ClientLogic.CardServer
 {
 	public partial class Service
 	{

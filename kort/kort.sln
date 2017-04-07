@@ -23,6 +23,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicTest", "LogicTest\LogicTest.csproj", "{F7EFCA39-F13C-4CCA-9A65-BBF016DD1837}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientLogic", "ClientLogic\ClientLogic.csproj", "{BC9200D1-CBCF-40B0-8923-4F7B7175E717}"
+	ProjectSection(ProjectDependencies) = postProject
+		{51E07B35-AD0F-4D88-B161-323F60034CCE} = {51E07B35-AD0F-4D88-B161-323F60034CCE}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

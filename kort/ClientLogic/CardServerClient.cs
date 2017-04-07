@@ -1,10 +1,10 @@
 ﻿using RestSharp;
 using System.Collections.Generic;
-using WindowsClient.CardServer;
 using Ducksboard.Serializers;
 using System.Configuration;
+using ClientLogic.CardServer;
 
-namespace WindowsClient
+namespace ClientLogic
 {
 	public class CardServerClient
 	{
@@ -16,7 +16,7 @@ namespace WindowsClient
 			_client = new RestClient(serverUrl);
 		}
 
-		internal List<Member> GetMembersToAlert()
+		public List<Member> GetMembersToAlert()
 		{
 			RestRequest request = new RestRequest("Members/ToAlert", Method.GET);
 			IRestResponse<List<Member>> response = _client.Execute<List<Member>>(request);
@@ -24,7 +24,7 @@ namespace WindowsClient
 			return response.Data;
 		}
 
-		internal List<Member> GetMembersByCardId(string cardId)
+		public List<Member> GetMembersByCardId(string cardId)
 		{
 			RestRequest request = new RestRequest("Members/CardId/{cardId}", Method.GET);
 
@@ -35,7 +35,7 @@ namespace WindowsClient
 			return response.Data;
 		}
 
-		internal List<Member> GetMembersByNickName(string nickName)
+		public List<Member> GetMembersByNickName(string nickName)
 		{
 			RestRequest request = new RestRequest("Members/NickName/{nickName}", Method.GET);
 
@@ -47,7 +47,7 @@ namespace WindowsClient
 		}
 
 
-		internal void InsertMember(Member member)
+		public void InsertMember(Member member)
 		{
 			RestRequest request = new RestRequest("Member", Method.POST);
 			request.RequestFormat = DataFormat.Json;
@@ -59,7 +59,7 @@ namespace WindowsClient
 			member.Id = response.Data.Id;
 		}
 
-		internal List<VisitTimeAlert> GetAlertsOnMember(string memberId)
+		public List<VisitTimeAlert> GetAlertsOnMember(string memberId)
 		{
 			RestRequest request = new RestRequest("Alerts/VisitTimeAlert/{memberid}", Method.GET);
 
@@ -70,7 +70,7 @@ namespace WindowsClient
 			return response.Data;
 		}
 
-		internal List<Service> GetServicesOnMember(string memberId)
+		public List<Service> GetServicesOnMember(string memberId)
 		{
 			RestRequest request = new RestRequest("Services/{memberid}", Method.GET);
 
@@ -81,7 +81,7 @@ namespace WindowsClient
 			return response.Data;
 		}
 
-		internal List<Visit> GetVisitsOnMember(string memberId)
+		public List<Visit> GetVisitsOnMember(string memberId)
 		{
 			RestRequest request = new RestRequest("Visits/{memberid}", Method.GET);
 
@@ -92,7 +92,7 @@ namespace WindowsClient
 			return response.Data;
 		}
 
-		internal void InsertService(Service service)
+		public void InsertService(Service service)
 		{
 			RestRequest request = new RestRequest("Service", Method.POST);
 			request.RequestFormat = DataFormat.Json;
@@ -104,7 +104,7 @@ namespace WindowsClient
 			service.Id = response.Data.Id;
 		}
 
-		internal void InsertVisit(Visit visit)
+		public void InsertVisit(Visit visit)
 		{
 			RestRequest request = new RestRequest("Visit", Method.POST);
 			request.RequestFormat = DataFormat.Json;
@@ -117,7 +117,7 @@ namespace WindowsClient
 			visit.Id = response.Data.Id;
 		}
 
-		internal void InsertAlert(VisitTimeAlert alert)
+		public void InsertAlert(VisitTimeAlert alert)
 		{
 			RestRequest request = new RestRequest("Alert/VisitTimeAlert", Method.POST);
 			request.RequestFormat = DataFormat.Json;
@@ -130,7 +130,7 @@ namespace WindowsClient
 			alert.Id = response.Data.Id;
 		}
 
-		internal void UpdateMember(Member member)
+		public void UpdateMember(Member member)
 		{
 			RestRequest request = new RestRequest("Member", Method.PUT);
 			request.RequestFormat = DataFormat.Json;
@@ -140,7 +140,7 @@ namespace WindowsClient
 			IRestResponse response = _client.Put(request);
 		}
 
-		internal void UpdateService(Service service)
+		public void UpdateService(Service service)
 		{
 			RestRequest request = new RestRequest("Service", Method.PUT);
 			request.RequestFormat = DataFormat.Json;
