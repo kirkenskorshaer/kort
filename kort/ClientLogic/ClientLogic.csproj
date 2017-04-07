@@ -50,6 +50,7 @@
     <Compile Include="CardServer\Alert\VisitTimeAlert.cs" />
     <Compile Include="CardServer\Member.cs" />
     <Compile Include="CardServer\Service.cs" />
+    <Compile Include="CardServer\Ticket.cs" />
     <Compile Include="CardServer\Visit.cs" />
     <Compile Include="Connected Services\CardServer\Reference.cs">
       <AutoGen>True</AutoGen>
