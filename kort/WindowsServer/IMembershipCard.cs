@@ -71,5 +71,15 @@ namespace WindowsServer
 		[OperationContract]
 		[WebInvoke(Method = "POST", UriTemplate = "Visit", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
 		InsertResult InsertVisit(Visit visit);
+
+
+		[OperationContract]
+		[WebInvoke(Method = "GET", UriTemplate = "Ip", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+		string GetMyIp();
+
+
+		[OperationContract]
+		[WebInvoke(Method = "PUT", UriTemplate = "Ticket", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+		bool UpdateTicket(Ticket ticket);
 	}
 }
