@@ -41,13 +41,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Handler\AlertHandler.cs" />
-    <Compile Include="Handler\MemberHandler.cs" />
-    <Compile Include="Handler\ServiceHandler.cs" />
-    <Compile Include="Handler\VisitHandler.cs" />
+    <Compile Include="Receivable\Alert\DeleteAlert.cs" />
+    <Compile Include="Receivable\Alert\GetAlertsOnMember.cs" />
+    <Compile Include="Receivable\Alert\InsertAlert.cs" />
     <Compile Include="Receivable\IReceivable.cs" />
     <Compile Include="Pipeline.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Receivable\Member\DeleteMember.cs" />
+    <Compile Include="Receivable\Member\GetMembersByCardId.cs" />
+    <Compile Include="Receivable\Member\GetMembersByNickName.cs" />
+    <Compile Include="Receivable\Member\GetMembersToAlert.cs" />
+    <Compile Include="Receivable\Member\InsertMember.cs" />
+    <Compile Include="Receivable\Member\UpdateMember.cs" />
+    <Compile Include="Receivable\Service\DeleteService.cs" />
+    <Compile Include="Receivable\Service\GetServicesOnMember.cs" />
+    <Compile Include="Receivable\Service\InsertService.cs" />
+    <Compile Include="Receivable\Service\UpdateService.cs" />
+    <Compile Include="Receivable\Ticket\CreateTicket.cs" />
+    <Compile Include="Receivable\Visit\GetVisitsOnMember.cs" />
+    <Compile Include="Receivable\Visit\InsertVisit.cs" />
     <Compile Include="Security\Privilege.cs" />
     <Compile Include="Time\Period.cs" />
   </ItemGroup>
