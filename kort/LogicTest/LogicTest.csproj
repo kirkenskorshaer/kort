@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Handler\AlertHandlerTest.cs" />
     <Compile Include="Handler\MemberHandlerTest.cs" />
+    <Compile Include="Handler\TicketHandlerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestBase.cs" />
   </ItemGroup>
@@ -64,6 +65,10 @@
     <ProjectReference Include="..\Logic\Logic.csproj">
       <Project>{21fd26a6-ae17-4299-846b-b26c4c4d5c71}</Project>
       <Name>Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\Utilities.csproj">
+      <Project>{4b66b684-8222-487a-865f-f060c0ef263a}</Project>
+      <Name>Utilities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
