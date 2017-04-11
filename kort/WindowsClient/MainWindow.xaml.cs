@@ -45,7 +45,7 @@ namespace WindowsClient
 			_scannerConnectionFinder = new ScannerConnectionFinder();
 			_scannerConnectionFinder.ScannerConnected += ScannerConnected;
 
-			_client = new CardServerClient();
+			_client = new CardServerClient("userNameTest", "passwordTest", "::1", TimeSpan.FromSeconds(5));
 
 			string ips = GetAllLocalIPv4(NetworkInterfaceType.Ethernet).Aggregate((allIps, currentIp) => allIps + " , " + currentIp);
 			Dispatcher.Invoke(() => ipLabel.Content = ips);
