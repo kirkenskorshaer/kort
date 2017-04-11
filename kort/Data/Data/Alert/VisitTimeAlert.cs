@@ -12,6 +12,11 @@ namespace Data.Data.Alert
 
 		public override Member GetMemberIfRaised(MongoConnection mongoConnection)
 		{
+			if (TimeFromLatestVisitBeforeAlert < TimeSpan.FromMilliseconds(1))
+			{
+				TimeFromLatestVisitBeforeAlert = TimeSpan.FromMilliseconds(1);
+			}
+
 			DateTime visitsAfterThisDatePreventsAlert = DateTime.Now - TimeFromLatestVisitBeforeAlert;
 
 			List<Visit> visitsPreventingAlert = Read<Visit>(mongoConnection, visit =>
