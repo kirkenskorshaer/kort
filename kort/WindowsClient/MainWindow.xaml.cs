@@ -49,8 +49,14 @@ namespace WindowsClient
 			string ips = GetAllLocalIPv4(NetworkInterfaceType.Ethernet).Aggregate((allIps, currentIp) => allIps + " , " + currentIp);
 			Dispatcher.Invoke(() => ipLabel.Content = ips);
 
-			List<Member> membersToAlert = _client.GetMembersToAlert();
-			Dispatcher.Invoke(() => membersToAlert.ForEach(member => _membersToAlert.Add(member)));
+			try
+			{
+				List<Member> membersToAlert = _client.GetMembersToAlert();
+				Dispatcher.Invoke(() => membersToAlert.ForEach(member => _membersToAlert.Add(member)));
+			}
+			catch (Exception)
+			{
+			}
 		}
 
 		public static string[] GetAllLocalIPv4(NetworkInterfaceType networkInterfaceType)
