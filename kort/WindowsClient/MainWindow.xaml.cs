@@ -11,6 +11,9 @@ using System.Net.Sockets;
 using System.Windows.Controls;
 using System.ComponentModel;
 using System.Windows.Data;
+using Squirrel;
+using System.Configuration;
+using System.Threading.Tasks;
 
 namespace WindowsClient
 {
@@ -53,6 +56,16 @@ namespace WindowsClient
 			{
 				List<Member> membersToAlert = _client.GetMembersToAlert();
 				Dispatcher.Invoke(() => membersToAlert.ForEach(member => _membersToAlert.Add(member)));
+
+				string updatePath = ConfigurationManager.AppSettings["updatePath"];
+
+				if (string.IsNullOrWhiteSpace(updatePath) == false)
+				{
+					using (UpdateManager updateManager = new UpdateManager(updatePath))
+					{
+						updateManager.UpdateApp();
+					}
+				}
 			}
 			catch (Exception)
 			{
