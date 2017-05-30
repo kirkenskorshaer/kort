@@ -10,6 +10,9 @@
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
+# sublime workspace
+*.sublime-workspace
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
