@@ -30,6 +30,10 @@ exports.getMembersByNickName = function(req, res)
 
 exports.getMembersToAlert = function(req, res)
 {
+	var membersToAlert = require('./logic/MembersToAlert');
+	membersToAlert.getMembersToAlert(req, res);
+
+	/*
 	Member.find({}, function(err, member)
 	{
 		if (err)
@@ -38,6 +42,7 @@ exports.getMembersToAlert = function(req, res)
 		}
 		res.json(member);
 	});
+	*/
 };
 
 exports.insertMember = function(req, res)
