@@ -11,6 +11,7 @@ using System.Net.Sockets;
 using System.Windows.Controls;
 using System.ComponentModel;
 using System.Windows.Data;
+using WindowsClient.UI;
 
 namespace WindowsClient
 {
@@ -260,6 +261,8 @@ namespace WindowsClient
 
 		private void GenerateCardButton_Click(object sender, RoutedEventArgs e)
 		{
+			CardForPrint cardForPrint = new CardForPrint(12340);
+			cardForPrint.Show();
 		}
 	}
 }
