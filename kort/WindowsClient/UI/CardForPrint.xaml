@@ -6,8 +6,12 @@
         xmlns:local="clr-namespace:WindowsClient.UI"
         mc:Ignorable="d"
         Title="Kort Til Print" Height="300" Width="600">
-	<Grid>
-		<Image x:Name="cardImage" HorizontalAlignment="Left" Margin="10,10,10,10" VerticalAlignment="Top"/>
-
-	</Grid>
+	<DockPanel HorizontalAlignment="Stretch" LastChildFill="False" Margin="0,0,0,0" VerticalAlignment="Stretch">
+		<Menu DockPanel.Dock="Top">
+			<MenuItem Header="Print" Click="MenuItem_Click"/>
+		</Menu>
+		<Grid>
+			<Image x:Name="cardImage" HorizontalAlignment="Stretch" Margin="10,10,10,10" VerticalAlignment="Stretch"/>
+		</Grid>
+	</DockPanel>
 </Window>

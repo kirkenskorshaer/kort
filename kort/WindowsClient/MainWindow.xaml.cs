@@ -261,7 +261,7 @@ namespace WindowsClient
 
 		private void GenerateCardButton_Click(object sender, RoutedEventArgs e)
 		{
-			CardForPrint cardForPrint = new CardForPrint(12340);
+			CardForPrint cardForPrint = new CardForPrint(12340, "testName");
 			cardForPrint.Show();
 		}
 	}
