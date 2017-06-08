@@ -6,85 +6,85 @@
         xmlns:local="clr-namespace:WindowsClient"
         mc:Ignorable="d"
         Title="Kirkens Korshær" Height="500" Width="700">
-    <Grid>
-        <TabControl x:Name="tabControl" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch">
-            <TabItem Header="Kunde">
-                <Grid Background="#FFE5E5E5">
-                    <TabControl x:Name="UserTabControl" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch">
-                        <TabItem Header="Stamoplysninger">
-                            <Grid Background="#FFE5E5E5">
-                                <Label x:Name="label3" Content="Kalde Navn" HorizontalAlignment="Left" Margin="10,10,10,10" VerticalAlignment="Top"/>
-                                <TextBox x:Name="nameTextBox" HorizontalAlignment="Stretch" Height="23" Margin="100,10,10,10" TextChanged="NickNameTextChanged" TextWrapping="Wrap" Text="-" VerticalAlignment="Top"/>
-                                <Label x:Name="label" Content="Scanner Id" HorizontalAlignment="Left" Margin="10,10,10,10" VerticalAlignment="Bottom"/>
-                                <Label x:Name="scannerIdLabel" Content="-" HorizontalAlignment="Left" Margin="100,10,10,10" VerticalAlignment="Bottom"/>
-                            </Grid>
-                        </TabItem>
-                        <TabItem Header="Services">
-                            <Grid Background="#FFE5E5E5">
-                                <Button Content="Tilføj Service" Height="30" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Top" Click="AddService"/>
-                                <ListView x:Name="serviceListView" HorizontalAlignment="Stretch" Margin="0,30,0,0" VerticalAlignment="Stretch">
-                                    <ListView.Resources>
-                                        <Style TargetType="{x:Type ListViewItem}">
-                                            <EventSetter Event="MouseDoubleClick" Handler="UseService" />
-                                        </Style>
-                                    </ListView.Resources>
-                                    <ListView.View>
-                                        <GridView>
-                                            <GridViewColumn/>
-                                        </GridView>
-                                    </ListView.View>
-                                </ListView>
-                            </Grid>
-                        </TabItem>
-                        <TabItem Header="Besøg">
-                            <Grid Background="#FFE5E5E5">
-                                <ListView x:Name="visitListView" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch">
-                                    <ListView.View>
-                                        <GridView>
-                                            <GridViewColumn/>
-                                        </GridView>
-                                    </ListView.View>
-                                </ListView>
-                            </Grid>
-                        </TabItem>
-                        <TabItem Header="Alarmer">
-                            <Grid Background="#FFE5E5E5">
-                                <Button Content="Tilføj Alarm" Height="30" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Top" Click="AddAlert"/>
-                                <ListView x:Name="alertListView" HorizontalAlignment="Stretch" Margin="0,30,0,0" VerticalAlignment="Stretch">
-                                    <ListView.View>
-                                        <GridView>
-                                            <GridViewColumn/>
-                                        </GridView>
-                                    </ListView.View>
-                                </ListView>
-                            </Grid>
-                        </TabItem>
-                    </TabControl>
-                </Grid>
-            </TabItem>
-            <TabItem Header="Scanner">
-                <Grid Background="#FFE5E5E5">
+	<Grid>
+		<TabControl x:Name="tabControl" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch">
+			<TabItem Header="Kunde">
+				<Grid Background="#FFE5E5E5">
+					<TabControl x:Name="UserTabControl" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch">
+						<TabItem Header="Stamoplysninger">
+							<Grid Background="#FFE5E5E5">
+								<Label x:Name="label3" Content="Kalde Navn" HorizontalAlignment="Left" Margin="10,10,10,10" VerticalAlignment="Top"/>
+								<TextBox x:Name="nameTextBox" HorizontalAlignment="Stretch" Height="23" Margin="100,10,10,10" TextChanged="NickNameTextChanged" TextWrapping="Wrap" Text="-" VerticalAlignment="Top"/>
+								<Label x:Name="label" Content="Scanner Id" HorizontalAlignment="Left" Margin="10,10,10,10" VerticalAlignment="Bottom"/>
+								<Label x:Name="scannerIdLabel" Content="-" HorizontalAlignment="Left" Margin="100,10,10,10" VerticalAlignment="Bottom"/>
+							</Grid>
+						</TabItem>
+						<TabItem Header="Services">
+							<Grid Background="#FFE5E5E5">
+								<Button Content="Tilføj Service" Height="30" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Top" Click="AddService"/>
+								<ListView x:Name="serviceListView" HorizontalAlignment="Stretch" Margin="0,30,0,0" VerticalAlignment="Stretch">
+									<ListView.Resources>
+										<Style TargetType="{x:Type ListViewItem}">
+											<EventSetter Event="MouseDoubleClick" Handler="UseService" />
+										</Style>
+									</ListView.Resources>
+									<ListView.View>
+										<GridView>
+											<GridViewColumn/>
+										</GridView>
+									</ListView.View>
+								</ListView>
+							</Grid>
+						</TabItem>
+						<TabItem Header="Besøg">
+							<Grid Background="#FFE5E5E5">
+								<ListView x:Name="visitListView" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch">
+									<ListView.View>
+										<GridView>
+											<GridViewColumn/>
+										</GridView>
+									</ListView.View>
+								</ListView>
+							</Grid>
+						</TabItem>
+						<TabItem Header="Alarmer">
+							<Grid Background="#FFE5E5E5">
+								<Button Content="Tilføj Alarm" Height="30" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Top" Click="AddAlert"/>
+								<ListView x:Name="alertListView" HorizontalAlignment="Stretch" Margin="0,30,0,0" VerticalAlignment="Stretch">
+									<ListView.View>
+										<GridView>
+											<GridViewColumn/>
+										</GridView>
+									</ListView.View>
+								</ListView>
+							</Grid>
+						</TabItem>
+					</TabControl>
+				</Grid>
+			</TabItem>
+			<TabItem Header="Scanner">
+				<Grid Background="#FFE5E5E5">
 					<Label Name="ipLabel" Content="-" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-                    <ListView x:Name="scannerListView" HorizontalAlignment="Stretch" Margin="0,30,0,0" VerticalAlignment="Stretch">
-                        <ListView.View>
-                            <GridView>
-                                <GridViewColumn/>
-                            </GridView>
-                        </ListView.View>
-                    </ListView>
-                </Grid>
-            </TabItem>
-            <TabItem Header="Alarmer">
-                <Grid Background="#FFE5E5E5">
-                    <ListView x:Name="alertAllListView" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch">
-                        <ListView.View>
-                            <GridView>
-                                <GridViewColumn/>
-                            </GridView>
-                        </ListView.View>
-                    </ListView>
-                </Grid>
-            </TabItem>
-        </TabControl>
-    </Grid>
+					<ListView x:Name="scannerListView" HorizontalAlignment="Stretch" Margin="0,30,0,0" VerticalAlignment="Stretch">
+						<ListView.View>
+							<GridView>
+								<GridViewColumn/>
+							</GridView>
+						</ListView.View>
+					</ListView>
+				</Grid>
+			</TabItem>
+			<TabItem Header="Alarmer">
+				<Grid Background="#FFE5E5E5">
+					<ListView x:Name="alertAllListView" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch">
+						<ListView.View>
+							<GridView>
+								<GridViewColumn/>
+							</GridView>
+						</ListView.View>
+					</ListView>
+				</Grid>
+			</TabItem>
+		</TabControl>
+	</Grid>
 </Window>
