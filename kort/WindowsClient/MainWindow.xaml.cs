@@ -257,5 +257,9 @@ namespace WindowsClient
 			ICollectionView view = CollectionViewSource.GetDefaultView(_services);
 			view.Refresh();
 		}
+
+		private void GenerateCardButton_Click(object sender, RoutedEventArgs e)
+		{
+		}
 	}
 }
