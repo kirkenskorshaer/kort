@@ -3,6 +3,7 @@ using System;
 using System.Drawing;
 using System.IO;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 
 namespace WindowsClient.UI
@@ -19,7 +20,9 @@ namespace WindowsClient.UI
 		private static PointF _barcodeTextLocation = new PointF(160, 203);
 		private static Font _font = new Font("Verdana", 12);
 
-		public CardForPrint(long contentLong)
+		private string _printString;
+
+		public CardForPrint(long contentLong, string cardHoldeNickName)
 		{
 			InitializeComponent();
 
@@ -27,6 +30,7 @@ namespace WindowsClient.UI
 			{
 				string barcodeContent = LongToBarcodeContent(contentLong);
 				DrawBarCode(barcodeContent);
+				_printString = $"{cardHoldeNickName} - {barcodeContent}";
 			}
 			catch (Exception)
 			{
@@ -90,6 +94,15 @@ namespace WindowsClient.UI
 				createdBitmap = new Bitmap(outStream);
 			}
 			return createdBitmap;
+		}
+
+		private void MenuItem_Click(object sender, RoutedEventArgs e)
+		{
+			PrintDialog printDialog = new PrintDialog();
+			if (printDialog.ShowDialog() == true)
+			{
+				printDialog.PrintVisual(cardImage, _printString);
+			}
 		}
 	}
 }
